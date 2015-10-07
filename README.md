@@ -12,9 +12,9 @@
 
 ##Releases
 
-For Linux-x86_64 []()
+For Linux-x86_64 [传送门](https://github.com/Sg4Dylan/MoMo-HeartBeat/tree/master/Release/Linux-x86_64)
 
-For Win-x86 []()
+For Win-x86 [传送门](https://github.com/Sg4Dylan/MoMo-HeartBeat/tree/master/Release/Win_x86)
 
 ##Usage
 
