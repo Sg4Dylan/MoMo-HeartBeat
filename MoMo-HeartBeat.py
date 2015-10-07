@@ -6,17 +6,19 @@ import pyDes,pyAes,binascii
 import ConfigParser
 config = ConfigParser.ConfigParser()
 
-global g_u,g_p,g_mac,g_server,g_key
+global g_u,g_p,g_mac,g_server,g_key,g_timer
 
 class ReadConfig(object):
     def getConfig(self):
-        global g_u,g_p,g_mac,g_server,g_key
+        global g_u,g_p,g_mac,g_server,g_key,g_timer
         config.read('setting.ini')
         g_u = config.get('userinfo', 'username')
         g_p = config.get('userinfo', 'password')
         g_mac = config.get('userinfo', 'mac')
         g_server = config.get('serverinfo', 'server')
         g_key = config.get('serverinfo', 'key')
+        g_timer = config.get('serverinfo', 'time')
+        g_timer = float(g_timer)
 
 class NetUtil(object):
     def getIP(self):
@@ -97,8 +99,8 @@ class SxHeartBeat(object):
         return self._acc,self._pwd,self._mac,self._server,self._key
 
 print('-----------------------------------\nMoMo-HeartBeat Beta v0.1\nby Sg4Dylan\nThis program is licensed under GPL license.\n-----------------------------------')
+ReadConfig().getConfig()
 while 1:
-    ReadConfig().getConfig()
     print SxHeartBeat(g_u,g_p,g_mac,g_server,g_key).SendAllHB()
     print('Send OK')
-    time.sleep(150)
+    time.sleep(g_timer)

@@ -18,9 +18,11 @@ For Win-x86 [传送门](https://github.com/Sg4Dylan/MoMo-HeartBeat/tree/master/R
 
 ##Usage
 
-修改 Setting.ini 中 userinfo 部分的配置，其中 MAC 地址应填写拨号设备相应 端口/网卡 的 MAC 
+修改 setting.ini 中 userinfo 部分的配置，其中 MAC 地址应填写拨号设备相应 端口/网卡 的 MAC 。
 
-修改完成后运行脚本即可
+默认为 50 秒一次心跳发送，可自行根据自身情况修改 setting.ini 中 serverinfo 部分的 time 值即可。
+
+修改保存运行即可。
 
 
 ##Troubleshooting
